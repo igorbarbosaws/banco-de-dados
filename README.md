@@ -1,4 +1,4 @@
-## ☕ Atividade Acadêmica: Banco de Dados de uma Cafeteria
+## ☕ Atividade Acadêmica: Banco de Dados (ADS)
 
 Este repositório contém o script SQL para a criação e manipulação de um banco de dados relacional (BD) fictício, denominado **`CafeteriaDoIdu`**. O projeto foi desenvolvido como parte de uma atividade acadêmica para demonstrar o uso prático dos comandos **DDL** (Data Definition Language) e **DML** (Data Manipulation Language).
 
