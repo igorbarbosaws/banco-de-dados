@@ -14,6 +14,25 @@ O objetivo desta atividade é simular um sistema de gerenciamento de dados para 
 
 ---
 
+### 📝 Sobre o Projeto (Descrição, Objetivos e Aprendizados)
+
+#### **1. Descrição do Banco de Dados**
+O **`TheDailyGrindDB`** simula um sistema de gerenciamento de informações para uma cafeteria fictícia. Ele é estruturado para lidar com três entidades principais: **`Produtos`** (o que é vendido), **`Clientes`** (quem compra) e **`Pedidos`** (as transações de venda). Este modelo permite registrar o estoque, preços, dados de fidelidade do cliente e o histórico de compras.
+
+#### **2. Objetivo do Projeto**
+O principal objetivo foi consolidar o entendimento e a aplicação dos fundamentos da linguagem SQL, especificamente:
+* **Modelagem de Dados:** Definir entidades, atributos e escolher os tipos de dados apropriados.
+* **DDL (Definição):** Utilizar `CREATE TABLE`, `ALTER TABLE` e definir restrições de integridade (como $\text{PRIMARY KEY}$, $\text{FOREIGN KEY}$, $\text{UNIQUE}$ e $\text{NOT NULL}$).
+* **DML (Manipulação):** Realizar operações básicas de CRUD (Create, Read, Update, Delete) utilizando os comandos `INSERT`, `SELECT`, `UPDATE` e `DELETE`.
+
+#### **3. Aprendizados Principais**
+A conclusão desta atividade reforçou a importância de:
+* **Integridade de Dados:** A necessidade de definir restrições (`NOT NULL`, $\text{UNIQUE}$) para garantir que o banco de dados armazene informações corretas e consistentes.
+* **Relacionamentos:** A aplicação da $\text{FOREIGN KEY}$ na tabela **`Pedidos`** para ligá-la à tabela **`Clientes`**, demonstrando o conceito de integridade referencial e o relacionamento *Um-para-Muitos*.
+* **Planejamento:** A fase de planejamento (identificar entidades e atributos) é crucial para uma construção eficiente e lógica do script SQL.
+
+---
+
 ### 🧱 Estrutura do Banco de Dados (`CafeteriaDoIdu`)
 
 O banco de dados é composto por três tabelas principais, que representam as entidades essenciais para o negócio da cafeteria:
