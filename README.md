@@ -138,3 +138,54 @@ WHERE Estoque > 40;
 -- DML: Excluir um pedido (DELETE)
 DELETE FROM Pedidos
 WHERE PedidoID = 2;
+```
+
+---
+
+## 💡 Fundamentos de SQL: DDL e DML Explicados
+
+O SQL (Structured Query Language) é dividido em subconjuntos que definem o tipo de operação que você pode realizar no seu banco de dados. Os mais fundamentais são o **DDL** (Data Definition Language) e o **DML** (Data Manipulation Language).
+
+---
+
+### 1. DDL: Data Definition Language (Linguagem de Definição de Dados)
+
+O DDL é responsável por **definir e gerenciar a estrutura** do seu banco de dados e seus objetos (tabelas, índices, usuários, etc.). Pense no DDL como a arquitetura do prédio; ele cria o esqueleto e as paredes, mas não o conteúdo.
+
+#### Comandos DDL Comuns e Exemplos do Projeto
+
+| Comando | Função | Exemplo Prático (`TheDailyGrindDB`) |
+| :--- | :--- | :--- |
+| **`CREATE`** | Cria novos objetos (bancos, tabelas). | `CREATE TABLE Produtos (...)` |
+| **`ALTER`** | Modifica a estrutura de um objeto existente (ex: adicionar uma coluna). | `ALTER TABLE Produtos ADD COLUMN DataUltimaAtualizacao DATE;` |
+| **`DROP`** | Remove completamente um objeto do banco de dados (tabela, banco, etc.). | `DROP TABLE Pedidos;` |
+| **`TRUNCATE`** | Remove **todos** os registros de uma tabela, mas mantém a estrutura e zera contadores. | `TRUNCATE TABLE Clientes;` (Remove todos os clientes, mas a tabela permanece.) |
+
+> **Conceito Chave:** O DDL é usado para definir restrições como **PRIMARY KEY** e **NOT NULL**, garantindo a **integridade estrutural** dos dados.
+
+---
+
+### 2. DML: Data Manipulation Language (Linguagem de Manipulação de Dados)
+
+O DML é responsável por **manipular os dados** armazenados dentro das tabelas definidas pelo DDL. Pense no DML como o conteúdo dentro do prédio; ele lida com a mobília, ocupantes e informações.
+
+#### Comandos DML Comuns e Exemplos do Projeto
+
+| Comando | Função | Exemplo Prático (`TheDailyGrindDB`) |
+| :--- | :--- | :--- |
+| **`INSERT`** | Adiciona novas linhas (registros) a uma tabela. | `INSERT INTO Produtos (NomeProduto, Preco, Estoque, Categoria) VALUES ('Latte', 15.50, 50, 'Café');` |
+| **`SELECT`** | Recupera dados do banco de dados (é o comando mais usado). | `SELECT NomeProduto, Preco FROM Produtos WHERE Estoque > 40;` |
+| **`UPDATE`** | Modifica dados existentes em uma ou mais linhas. | `UPDATE Produtos SET Preco = 16.00 WHERE NomeProduto = 'Latte';` |
+| **`DELETE`** | Remove linhas (registros) existentes de uma tabela. | `DELETE FROM Pedidos WHERE PedidoID = 2;` |
+
+> **Conceito Chave:** O DML depende diretamente da cláusula **`WHERE`**, que permite especificar quais linhas devem ser afetadas pela operação. Sem o `WHERE` no `UPDATE` ou `DELETE`, **todos** os dados da tabela serão alterados ou excluídos.
+
+---
+
+### 🔑 Resumo da Diferença
+
+| Característica | DDL (Definição) | DML (Manipulação) |
+| :--- | :--- | :--- |
+| **O que afeta?** | A **estrutura** das tabelas (colunas, tipos de dados, restrições). | Os **dados** dentro das tabelas (linhas/registros). |
+| **Exemplos** | `CREATE`, `ALTER`, `DROP`. | `INSERT`, `SELECT`, `UPDATE`, `DELETE`. |
+| **Transações** | Normalmente, as alterações são permanentes (auto-commit). | Permite controle de transação (`COMMIT`, `ROLLBACK`). |
